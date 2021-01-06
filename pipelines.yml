@@ -3,19 +3,19 @@ resources:
     type: GitRepo
     configuration:
       path: sherlock-codes/go-service
-      gitProvider: demo_github
+      gitProvider: zen1
 
   - name: gosvc_build_info
     type: BuildInfo
     configuration:
-      sourceArtifactory: demo_art
+      sourceArtifactory: demoArt
       buildName: svc_build
       buildNumber: 1
 
   - name: gosvc_promoted_build_info
     type: BuildInfo
     configuration:
-      sourceArtifactory: demo_art
+      sourceArtifactory: demoArt
       buildName: svc_build
       buildNumber: 1
 
@@ -28,21 +28,21 @@ resources:
   - name: appl_build_info_output
     type: BuildInfo
     configuration:
-      sourceArtifactory: demo_art
+      sourceArtifactory: demoArt
       buildName: backend_build
       buildNumber: 1
 
   - name: appl_build_info
     type: BuildInfo
     configuration:
-      sourceArtifactory: demo_art
+      sourceArtifactory: demoArt
       buildName: backend_build
       buildNumber: 1
 
   - name: appl_promoted_build_info
     type: BuildInfo
     configuration:
-      sourceArtifactory: demo_art
+      sourceArtifactory: demoArt
       buildName: backend_build
       buildNumber: 1
 
@@ -98,7 +98,7 @@ pipelines:
           inputResources:
             - name: gosvc_gitRepo
           integrations:
-            - name: demo_art
+            - name: demoArt
 
       - name: push_svc
         type: DockerPush
@@ -108,7 +108,7 @@ pipelines:
           failOnScan: true
           autoPublishBuildInfo: true
           integrations:
-            - name: demo_art
+            - name: demoArt
           inputSteps:
             - name: bld_svc
           outputResources:
@@ -119,7 +119,7 @@ pipelines:
         configuration:
           targetRepository: docker
           integrations:
-            - name: demo_art
+            - name: demoArt
           inputResources:
             - name: gosvc_build_info
           outputResources:
