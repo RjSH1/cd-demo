@@ -2,7 +2,7 @@ resources:
   - name: gosvc_gitRepo
     type: GitRepo
     configuration:
-      path: sherlock-codes/go-service
+      path: RjSH1/go-service
       gitProvider: zen1
 
   - name: gosvc_build_info
