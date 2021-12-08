@@ -53,7 +53,8 @@ pipelines:
           dockerFileLocation: .
           dockerFileName: Dockerfile
 #           dockerImageName: avinci-docker-local.jfrog.io/gosvc
-          dockerImageName: 146.148.104.158:8082/docker-local/gosvc
+#          dockerImageName: 146.148.104.158:8082/docker-local/gosvc
+          dockerImageName: distpipe.jfrogdev.org/docker-local/gosvc
           dockerImageTag: ${run_number}
           inputResources:
             - name: gosvc_gitRepo
